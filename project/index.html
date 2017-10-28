@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project | USydUFold</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="The BIOMOD 2017 team from the University of Sydney.">
+    <link rel="canonical" href="https://usydbiomod.gitlab.io/usydufold/usydufold/project/">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/usydufold/style.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/usydufold/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <header>
+             <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="site-title" href="/usydufold/"><div><img src="/usydufold/img/logo-ps.png" alt="logo" height="60px"/></div></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    	   <li class="active"><a href="/usydufold/project/">Project</a></li>
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/design/">Design</a></li>
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/analysis/">Analysis</a></li>
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/team/">Team</a></li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        </header>
+
+        <section class="container content-section">
+            <div id="main" class="page-content testcontainer">
+    <div class="sidebar sticky fixed" style="height:340px;">
+        <nav class="navsidebar navbar"> <!-- used to be class="floating-menu" -->
+            <a href="#page-top"> <h3> Project </h3> </a>
+            <a href="#motivation"> <span style="font-weight:bold"> Motivation</span></a>
+            <a href="#background"><span style="font-weight:bold"> Background and Design</span></a>
+            <a href="#amplification" style="text-align: center">Amplification</a>
+            <a href="#detection" style="text-align: center">Detection</a>
+            <a href="#integration"><span style="font-weight:bold"> Integration</span></a>
+            <a href="#goals"><span style="font-weight:bold"> Goals</span></a>
+            <a href="#refs"><span style="font-weight:bold"> References</span></a>
+        </nav>
+    </div>
+    <div class="wrapper flex-item">
+        <article class="post">
+            <header class="post-header">
+                <h1 class="post-title">Project</h1>
+            </header>
+
+            <div class="post-content">
+                <hr />
+<h1 id="motivation" class="anchor"> Motivation </h1>
+<hr />
+<p>From Zika and Ebola to HIV and H1N1, viruses have always been a key point of focus for the medical community. What makes viruses an especially deadly foe is their fast rates of mutation, which can render current antiviral therapies useless in the blink of an eye. For example, consider the common flu. Every year, flu vaccines must be redesigned to ensure that they will be effective, and even with this method, the vaccines are not foolproof. Earlier this year, Australia experienced the biggest flu season on record, with Queensland experiencing the highest number of flu-related hospital admissions in the past 5 years<sup>[1]</sup>.</p>
+
+<p><strong>Diagnosis is the first step to fighting viral infections</strong></p>
+
+<p>When a patient comes in with a suspected viral infection, the virus must be detected and recognised long before any treatment can be administered. While seemingly obvious, this fact is often overlooked in research. Despite huge advancements in antiviral therapy, viral detection methods have changed little over the past years. Using databases provided by the University of Sydney Library, a search using the keywords ‘virus treatment’ yielded 95,112 academic publications since 2000, yet a search using the keywords ‘virus detection’ yielded a scant 19,282 papers.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/publication.png" align="middle" width="600px" height="256px" />
+</p>
+
+<p>This remains a serious impediment to our ability to treat viral infections. A paper published in 1989 reported that physicians avoided using viral detection laboratories at hospitals due to the long wait before results could be obtained, and the high cost needed for viral detection tests<sup>[2]</sup>. The situation today has not changed.</p>
+
+<p>An ideal method for viral detection would be:</p>
+
+<ol>
+  <li>Easy to use</li>
+  <li>Low-cost</li>
+  <li>Capable of providing fast diagnosis</li>
+</ol>
+
+<p>This became the motivation for our project.</p>
+
+<hr />
+<h1 id="background" class="anchor"> Background and design </h1>
+<hr />
+
+<p>Our project aims to produce a system for viral diagnosis that is easy to use, low-cost, and is able to give a result on the spot. Our solution consists of two steps: amplification and detection.</p>
+
+<h2 id="amplification" class="anchor">  Amplification </h2>
+
+<p>As viruses are packets of DNA, viral DNA is usually present in samples of blood from an infected patient, and we can use this DNA as a target for detection. However, this viral DNA may only be present in trace amounts, making it extremely difficult to detect. Amplification is needed to turn this trace DNA into a larger signal that can be detected by our device.</p>
+
+<p>The classic method of amplification is polymerase chain reaction (PCR). In this method, an enzyme known as <em>Taq</em> polymerase produces many copies of the viral DNA, thus increasing the amount of viral DNA that we can detect. This sounds pretty amazing, but PCR has a drawback when it comes to point of care testing, particularly when used in remote or epidemic stricken areas. The machine may not been able operate due to lack of power, flood or some other environmental hurdle.</p>
+
+<p>An alternate method that has been proposed in DNA amplification is hybridisation chain reaction (HCR). HCR was originally introduced as a linear process; A DNA hairpin binds to a single stranded strand of “trigger” DNA, viral DNA in our system, which causes the hairpin to open up. The exposed toehold binds to a second hairpin, which in turn opens up. This process continues linearly until a long strand of DNA consisting of many shorter strands is formed. Recently, nonlinear HCR has been investigated<sup>[3]</sup>.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/hcr.png" align="middle" width="700px" height="243px" />
+</p>
+
+<p>In our design, the viral DNA first passes through an adaptor to release the trigger strand. This strand interacts with a double stranded sequence. Substrate A subsequently interacts with a helper, a strand that helps displace the desired target strand fed into the detection system. This in turn binds to another double stranded sequence with another helper. Which, finally, binds to a third double stranded sequence with another helper sequence. This process releases three target strands and repeats to give one, large dendrimer molecule and a lot of target strands for very small amounts of viral DNA.</p>
+
+<p style="text-align: center">
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/project/dendrimer.mp4" type="video/mp4" />
+    </video>
+</p>
+
+<p>These target strands are detected by the detection system, turning the signal into an colour change visible to the analyst.</p>
+
+<h2 id="detection" class="anchor"> Detection </h2>
+
+<p>DNA occurs on the nanoscale – this means that even after amplification, we are unable to see the viral DNA with our naked eyes. A device is needed to turn the amplified signal into a visible colour change. In our project, we use a technique called DNA origami to make a switchable device out of DNA.</p>
+
+<p><strong>What is DNA origami?</strong></p>
+
+<table style="margin-left: auto; margin-right: auto;" align="center">
+    <tbody>
+        <tr>
+            <td>
+                <img src="/usydufold/img/project/dna.jpg" width="auto" align="middle" height="200px" />
+            </td>
+            <td>
+                <p>DNA origami is a technique that uses DNA as a building material. It takes advantage of the specificity with which DNA base-pairs; adenine with thymine, and cytosine with guanine.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>This means that we can design strands of DNA with specific sequences of bases, such that when mixed together under the right conditions, the DNA will self-assemble into a structure determined by the DNA sequences used. While the first conceptualisation of this technique back in 2006 was only capable of making 2D shapes and patterns such as smiley faces and triangle tiles<sup>[4]</sup>, this technique has since been expanded to produce extraordinarily complex 3D structures such as boxes with controllable lids<sup>[5]</sup>.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/origami.jpg" align="middle" width="700px" height="407px" />
+</p>
+
+<p><strong>Why use DNA?</strong></p>
+
+<p>DNA has proven itself as an ideal structural material, for many reasons.</p>
+<ol>
+  <li>Low cost: DNA is a relatively cheap material. Simply by sending an online order with the desired sequences to companies such as IDT, the strands can be produced and shipped over within days at low costs.</li>
+  <li>Thermostability: DNA structures are stable over a larger range of temperatures. This means that unlike other common biomolecules like proteins, DNA structures do not have to be stored at near-zero temperatures, and have an incredibly long life. The lack of need of specialized storage equipment not only lowers the cost of making and using DNA structures, but also makes them more accessible in places where funds are an issue.</li>
+  <li>Ease of use: The stability and low toxicity of DNA means that specialized training is not required to be able to deal with DNA structures.</li>
+</ol>
+
+<p>For these reasons, DNA origami has been established as a valuable technique in an immense range of fields. For example, DNA origami has been used to design devices for targeted drug delivery<sup>[5]</sup>, scaffolds for protein folding<sup>[6]</sup>, and even molecular computing<sup>[6]</sup>.</p>
+
+<p>In this project, we use DNA origami to make a DNA structure that detects a signal, changes conformation and releases a dye molecule to produce a visible colour change in response to the signal. The signal in question is the presence of viral DNA, and thus this DNA structure acts as a viral biosensor.</p>
+
+<p><strong>Our device mimics paper origami.</strong></p>
+
+<p>We folded DNA into a large, flat sheet, in the following shape. The lines represent where the sheet is thinner, and can thus fold.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/twistopen.jpg" align="middle" width="400px" height="400px" />
+</p>
+
+<p>In paper origami, this pattern is known as a square twist. It allows the paper to exist in 2 conformations - a closed conformation and an open conformation. The square twist is most stable in either of these conformations, and cannot exist in any state in between the two conformations. Hence, if one pulls the edges of the closed square twist open with sufficient force, it ‘snaps’ to the open conformation, and if one pushes the edges of the open square twist together, it ‘snaps’ back to the closed conformation.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/openclosed.jpg" align="middle" width="500px" height="297px" />
+</p>
+
+<p>Hence, the square twist behaves like a switch that can only be in the ‘off’ or ‘on’ state. By making the square twist out of DNA, we intend for it to act as a switch on the nanoscale, one which is naturally ‘off’, but turns ‘on’ in the presence of viral DNA to produce a visible colour change. In other words, we are performing paper origami on a sheet made using the technique of DNA origami. There is a certain irony, but not an unsatisfying one, in this concept.</p>
+
+<p><strong>How does the origami produce a colour change?</strong></p>
+
+<p>The DNA device start off in the open conformation, and is held open by a brace; a long strand of DNA hybridized to a complement strand. The amplification system detects viral DNA, and produces an amplified signal in the form of a trigger strand, which binds to the complement strand. This displaces the complement strand from the brace, leaving the brace single-stranded. This brace is designed to preferentially fold into a hairpin when single-stranded, and this provides the force needed for the square twist to change to the closed conformation. The closing of the square twist brings two complementary sticky ends into proximity, one of which is initially hybridized to a dye-bearing DNA strand. The sticky ends bind and displace the dye-bearing strand, which is washed away. The removal of the dye-bearing strand results in a visible colour change.</p>
+
+<p style="text-align: center">
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/project/sqclose.mp4" type="video/mp4" />
+    </video>
+</p>
+
+<p><strong>What do we call this device?</strong></p>
+
+<p>During our meetings, we realised that what we were attempting to build was a foldable object that could tell you whether you had a viral infection or not - in some ways, this could be seen as telling your fortune. It came to mind that there already exists a folded object that tells one’s fortune - a fortune cookie! For this reason, our device has since been dubbed the ‘fortune cookie’.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/namingcookie.jpg" align="middle" width="500px" height="257px" />
+</p>
+
+<hr />
+<h1 id="integration" class="anchor"> Integration into a chip-based system </h1>
+<hr />
+
+<p>Having designed an amplification system that amplifies viral DNA into a large, detectable signal, and a device that can translate that signal into a visible colour change, we have conceptualised a system for the detection of viruses. To make this system of practical use, the system is intended to be contained within a chip, such that one only needs to inject a sample from a patient into the chip to diagnose the patient with a viral infection. The successful creation of this chip is the ultimate endpoint of our project.</p>
+
+<p><strong>Is this system meritable?</strong></p>
+
+<p>The system we have envisioned is a novel solution to the problems faced in viral detection today.</p>
+
+<ul>
+  <li>
+    <p>Speed: This system acts as a means of rapid, on-the-spot diagnosis that can be performed immediately at the bedside. This allows the patient to receive appropriate treatment faster.</p>
+  </li>
+  <li>
+    <p>Simplicity: As both amplification and detection are integrated into a single system, the system acts as a direct bridge between obtaining a sample from the patient and producing a diagnosis, without any intermediate steps. The system is also designed to be exceedingly easy to use - only the simple injection of the sample into the chip is necessary to obtain a result.</p>
+  </li>
+  <li>
+    <p>Cost: As the entirety of the system is made of DNA, it is projected to have low production costs. Compared to existing viral detection methods, our system is made all the more cost-efficient due to the lack of need for storage equipment, processing equipment or specialized training.</p>
+  </li>
+</ul>
+
+<hr />
+<h1 id="goals" class="anchor"> Goals </h1>
+<hr />
+
+<p>The ideal goal of our project would be to produce the chip described above, capable of reading a patient sample and diagnosing a viral infection within seconds. To achieve this goal, one would have to move through several intermediate stages of testing. However, given the timeframe of BIOMOD, it would be unfeasible to attempt every stage. Hence, we have identified the first few stages as our primary aims, so as to produce a proof of concept of the system.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/goals.jpg" align="middle" width="100%" height="100%" />
+</p>
+
+<p><strong>Checklist for success</strong></p>
+
+<ol>
+    <li>
+    Amplification
+        <ol>
+            <li class="check">Design an amplification system
+                <ol class="check">
+                    <li class="check"> Does the system give more output than the input it takes in? </li>
+                    <li class="check"> Is the system stable in the absence of viral DNA? </li>
+                </ol>
+            </li>
+        </ol>
+        <ol>
+            <li class="check">Design a virus-specific adaptor
+                <ol class="check">
+                    <li class="check">  Can the system recognise specific viruses? </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>
+    Detection
+        <ol>
+            <li class="check">Mathematical model
+                <ol class="check">
+                    <li class="check"> Does a square twist made of DNA behave the same way as a square twist made of paper? </li>
+                </ol>
+            </li>
+        </ol>
+        <ol>
+            <li class="check">Design a one-way hinge
+                <ol class="check">
+                    <li class="check"> Does the structure fold successfully? </li>
+                    <li class="check">  Does the hinge work - can the hinge open and close?</li>
+                    <li class="check">  Is the hinge one-way - is the motion of the arms of the hinge restricted within a range of angles?</li>
+                </ol>
+            </li>
+        </ol>
+        <ol>
+            <li class="uncheck">Design a full square twist made of DNA
+                <ol class="uncheck">
+                    <li class="uncheck"> Does the structure fold successfully? </li>
+                </ol>
+            </li>
+        </ol>
+        <ol>
+            <li class="check">Demonstrate trigger-induced folding
+                <ol class="check">
+                    <li class="check"> Can the trigger cause the one-way hinge to close? </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<p>For the results of our experiments, check out our <a href="/usydufold/design">design</a> and <a href="/usydufold/analysis">analysis</a>.</p>
+
+<p><strong>Stretch goals</strong></p>
+
+<p>In this competition, we have aimed to produce a proof of concept of our system, by specifically working towards meeting the criteria for success set out above. To turn this proof of concept into a working product, there is still much work to do.</p>
+
+<p>In the amplification system, we would like to modify the adaptor system to release the input dna  with the help of a fuel strand<sup>[7]</sup> and modify the amplification to be fourth order.</p>
+
+<p>In the detection system, we focused on the hinges of the DNA sheet. The next step would be to add the brace, and demonstrate that when single-stranded, the brace is able to make the square twist close.</p>
+
+<p>In addition, the amplification and detection systems were tested separately. For the ideal end goal to be achieved, we would have to test the amplification and detection systems together, ensuring that there is no cross-reaction between the systems, and that the amplified signal can be successfully passed from the amplification system to the detection system.</p>
+
+<p>The last step, of course, would be to put the entire system into a chip, making it wholly practical. One might also experiment with modifying our system to target different viruses, or even other pathogens entirely!</p>
+
+<hr />
+<h1 id="refs" class="anchor"> References </h1>
+<hr />
+
+<ol>
+  <li><a href="http://www.abc.net.au/news/2017-08-21/flu-influenza-why-2017-has-been-a-particularly-bad-year/8826512">http://www.abc.net.au/news/2017-08-21/flu-influenza-why-2017-has-been-a-particularly-bad-year/8826512</a></li>
+  <li>Chonmaitree, T., Baldwin, C.D., Lucia, H.L. (1989). Role of the virology laboratory in diagnosis and management of patients with central nervous system disease. Clinical Microbiology Reviews, 2: 1-14.</li>
+  <li>Xuan, F. and Hsing, I. (2014). Triggering Hairpin-Free Chain-Branching Growth of Fluorescent DNA Dendrimers for Nonlinear Hybridization Chain Reaction. <em>Journal of the American Chemical Society</em>, 136(28), pp.9810-9813.</li>
+  <li>Rothermund, P.W.K. (2006). Folding DNA to create nanoscale shapes and patterns. Nature, 440: 297-302.5</li>
+  <li>Andersen, E.S., Dong, M., Nielsen, M.M., Jahn, K., Subramani, R., Mamdouh, W. <em>et al.</em> (2009). Self-assembly of a nanoscale DNA box with a controllable lid. Nature, 459: 73-77.</li>
+  <li>Jabbari, H., Aminpour, M., Montemagno, C. (2015). Computational approaches to nucleic acid origami. ACS Combinatorial Science, 17: 535-547.</li>
+  <li>Zhang, Z. Fan, T.W. and Hsing, I.M.(2017). Integrating DNA strand displacement circuitry to the nonlinear hybridization chain reaction. Nanoscale, 9(8), pp.2748-2754.</li>
+</ol>
+
+<p><strong>Front page statistics</strong></p>
+
+<ol>
+  <li>Fisher M. Late diagnosis of HIV infection: major consequences and missed opportunities. Current Opinion in Infectious Diseases. 2008;21(1):1-3. doi:10.1097/qco.0b013e3282f2d8fb.</li>
+  <li>Xia Y, McLaughlin M, Chen W, Ling L, Tucker J. HIV and Hepatitis C Virus Testing Delays at Methadone Clinics in Guangdong Province, China. PLoS ONE. 2013;8(6):e66787. doi:10.1371/journal.pone.0066787.</li>
+</ol>
+
+<p>Icons made by Freepik from <a href="www.flaticon.com">www.flaticon.com</a>. Licensed for personal and commercial use.</p>
+
+            </div>
+        </article>
+    </div>
+</div>
+
+        </section>
+
+            <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h2><a name="contact"></a>Social Media</h2>
+            <ul class="list-inline banner-social-buttons">
+                
+                <li>
+                    <a href="https://twitter.com/UsydBiomod" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">twitter</span></a>
+                </li>
+                
+                <li>
+                    <a href="https://www.facebook.com/UsydBiomod" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">facebook</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </footer>
+
+         <!-- jQuery Version 1.11.0 -->
+    <script src="/usydufold/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/usydufold/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/usydufold/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/usydufold/js/grayscale.js"></script>
+    </body>
+</html>

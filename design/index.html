@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Design | USydUFold</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="The BIOMOD 2017 team from the University of Sydney.">
+    <link rel="canonical" href="https://usydbiomod.gitlab.io/usydufold/usydufold/design/">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/usydufold/style.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/usydufold/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <header>
+             <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="site-title" href="/usydufold/"><div><img src="/usydufold/img/logo-ps.png" alt="logo" height="60px"/></div></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/project/">Project</a></li>
+                        
+                    
+                        
+                    	   <li class="active"><a href="/usydufold/design/">Design</a></li>
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/analysis/">Analysis</a></li>
+                        
+                    
+                        
+                    	   <li ><a href="/usydufold/team/">Team</a></li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        </header>
+
+        <section class="container content-section">
+            <div id="main" class="page-content testcontainer">
+    <div class="sidebar sticky fixed" style="height:440px;">
+        <nav class="navsidebar navbar"> <!-- used to be class="floating-menu" -->
+            <a href="#page-top"> <h3> Design </h3> </a>
+            <a href="#amplification"> <span style="font-weight:bold"> Amplification</span></a>
+            <a href="#amp-stage1" style="text-align: center">Stage 1</a>
+            <a href="#amp-stage2" style="text-align: center">Stage 2</a>
+            <a href="#amp-stage3" style="text-align: center">Stage 3</a>
+            <a href="#amp-stage4" style="text-align: center">Stage 4</a>
+            <a href="#detection"><span style="font-weight:bold"> Detection</span></a>
+            <a href="#detection-stage1" style="text-align: center">Stage 1</a>
+            <a href="#detection-stage2" style="text-align: center">Stage 2</a>
+            <a href="#detection-stage3" style="text-align: center">Stage 3</a>
+            <a href="#detection-stage4" style="text-align: center">Stage 4</a>
+            <a href="#references"><span style="font-weight:bold"> References</span></a>
+        </nav>
+    </div>
+    <div class="wrapper flex-item">
+        <article class="post">
+            <header class="post-header">
+                <h1 class="post-title">Design</h1>
+            </header>
+
+            <div class="post-content">
+                <h1 id="amplification" class="anchor"> Amplification </h1>
+
+<h2 id="amp-stage1" class="anchor">Stage 1: Deciding on an amplification method </h2>
+
+<p>As the project is targeted at point of care applications, Polymerase Chain Reaction (PCR), one of the more common amplification methods, cannot be used. PCR machines require an active power supply and the equipment. As we had always taken PCR for granted, we had to do some research before we knew how we wanted to tackle our amplification system. And even when we did start finding alternatives, for a while we called them ‘PCR without PCR’.</p>
+
+<p>We did find a solution, in the form of the Hybridisation Chain Reaction (HCR). We read about linear HCR, which we described in the <a href="/usydufold/project">project</a> section. And then we found out about non-linear HCR. In a paper published in the Journal of the American Chemical Society (JACS), they had successfully created a second order HCR system<sup>[5]</sup>.</p>
+
+<p>In their system, an input binds to a double stranded sequence called substrate-A. This causes the smaller strand of substrate-A to be displaced and with the help of another single stranded sequence, assistant-A, is displaced altogether. This leave the input-substrate-A complex with a long single stranded toehold. Two double stranded complexes, called substrate-B, bind to the two identical sections on the toehold. This causes the smaller strand to displace and detach completely with the help of assistant-B. This forms a dendrimer monomer, with two single stranded toehold complementary to the toehold of substrate A. And hence the process repeats.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/quadratic.png" align="middle" width="700px" height="472px" />
+</p>
+
+<p>This method suited almost all of our needs. The only modifications we would need to make were a system that could easily be adapted for different viruses and a system that amplified more.</p>
+
+<h2 id="amp-stage2" class="anchor"> Stage 2: Reproducing the JACS results </h2>
+
+<p>To ensure that this system works with different sequences, it is necessary to model the structures using online nucleic acid design software. NUPACK offers both design and analysis software and hence is ideal for reproducing the JACS  complexes and design our own.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/subA.png" align="middle" width="500px" height="500px" />
+</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/subB.png" align="middle" width="500px" height="500px" />
+</p>
+
+<p>
+<a href="/usydufold/web/viewer.html?file=nupack1.pdf" target="_blank">Click to view the NUPACK code for stage 2.</a>
+</p>
+<p>
+<a href="/usydufold/web/viewer.html?file=2ndorderseq.pdf" target="_blank">Click to view the 2nd order sequences.</a>
+</p>
+
+<h2 id="amp-stage3" class="anchor"> Stage 3: Adaptor system </h2>
+
+<p>In order for the amplifications system to be easily adaptable to any virus, an adaptor system is introduced. The adaptor consists of the trigger strand, which would be used in the dendrimer, and a partially complementary strand which we termed “the lock” which forms a loop, as per the diagram below. It involves an input, which will be the viral dna in the final system. The input binds to a toehold of the adaptor. This should induce toehold mediated displacement, meaning that once the input binds onto the lock, the trigger starts to be displaced. This will then release the trigger and the amplification reaction can begin.</p>
+
+<p>If fuel is added, the input dna is released again and can bind to another adaptor.
+Two of the designs had NUPACK code to prevent formation of off-target complexes, and two didn’t</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/adaptor.png" align="middle" width="500px" height="500px" />
+</p>
+
+<p>
+<a href="/usydufold/web/viewer.html?file=nupack2.pdf" target="_blank">Click to view the NUPACK code for stage 3.</a>
+</p>
+<p>
+<a href="/usydufold/web/viewer.html?file=adaptorseq.pdf" target="_blank">Click to view the adaptor sequences.</a>
+</p>
+
+<h2 id="amp-stage4" class="anchor"> Stage 4: Third order amplification </h2>
+
+<p>In the interest of making our system fast, the faster the amplification system works, the better. So we decided to increase the degree of amplification. Rather than having two single stranded toeholds after a cycle, we’ll have three.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/reaction.png" align="middle" width="500px" height="722px" />
+</p>
+
+<p>
+<a href="/usydufold/web/viewer.html?file=nupack3.pdf" target="_blank">Click to view the NUPACK code for stage 4.</a>
+</p>
+<p>
+<a href="/usydufold/web/viewer.html?file=3rdorderseq.pdf" target="_blank">Click to view the 3rd order sequences.</a>
+</p>
+
+<h1 id="detection" class="anchor"> Detection </h1>
+
+<h2 id="detection-stage1" class="anchor"> Stage 1: Creating a mathematical model </h2>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td style="padding: 15px;"><p>
+            The paper square twist is characterised by having 2 configurations (open and closed) that have minimum potential energy and are thus most stable. To see if this property is also exhibited by a square twist made of DNA, we used MATLAB to model the DNA square twist as it folds.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<p><strong>Introduction</strong></p>
+
+<p>In origami, the square twist is a fold notable in that the crease pattern has 0 degrees of freedom, which means that it should not be able to fold at all. However, in reality, we find that the square twist can exist in either open or closed conformations. This is made possible by the intrinsic nature of paper. As paper used in origami is not completely stiff, the facets of the crease pattern (shown below) can bend and deform. This creates hidden degrees of freedom, allowing the square twist to access its closed conformation. In addition, the folding of the paper along the creases, as well as the bends (deformations) in the facets increases the potential energy of the paper square twist as it folds. Hence, the square twist possess higher potential energy when moving between either configuration, and is most stable in either the fully closed or the fully open configuration<sup>[1]</sup>.</p>
+
+<p>As the square twist is made possible by the deformable nature of paper, it is unknown if a sheet made of DNA, with the same crease pattern, will also be able to access open and closed conformations. To test if the DNA square twist will behave in the same way as the paper square twist, MATLAB was used to model the square twist as it folds from the open conformation to the closed conformation.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/project/twistopen.jpg" align="middle" width="400px" height="400px" />
+</p>
+
+<p><strong>Aim</strong></p>
+
+<p>This experiment aimed to model the DNA square twist mathematically and investigate whether the DNA square twist has stable open and closed conformations similar to that of a paper square twist.</p>
+
+<p><strong>Design</strong></p>
+
+<p>According to Silverberg <em>et al.</em> (2015), deformations in the square twist crease pattern are limited to the rhombus facets. Hence, the square twist can be modelled as a series of rigid square- or triangle- shaped facets, joined along their edges. In the following diagram, the solid lines joining the square and rhombus facets are the creases of the folding pattern, while the dashed lines represent the bends of the rhombus facets.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/origami-outline.jpg" align="middle" width="400px" height="400px" />
+</p>
+
+<p>The elastic potential of the square twist, U<sub>total</sub>, can then be calculated as the sum of the potential energy of the bends and the potential energy of the creases.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/equations.jpg" align="middle" width="500px" height="182px" />
+</p>
+
+<p>The constant k<sub>c</sub> is the torsional elastic constant on a crease, while kb is the torsional elastic constant on a bend.</p>
+
+<p>In the DNA square twist, the square and rhombus facets are individual DNA sheets, formed by layers of helices in a honeycomb lattice. An example of a square facet is shown below, where each cylinder is a double-stranded DNA (dsDNA) helix.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/facet.jpg" align="middle" width="500px" height="300px" />
+</p>
+
+<p>The facets are joined by hinges; lengths of single-stranded DNA (ssDNA). Hence, the creases in the paper folding pattern are replaced by parallel hinges of ssDNA, and k<sub>c</sub> can be considered the total bending energy of ssDNA. As for the bends, k<sub>b</sub> can be considered the total bending energy of dsDNA in a honeycomb lattice sheet.</p>
+
+<p>Next, the square twist was modelled in 3-dimensional space. The centre of the central square facet was set at the origin O (0,0,0), and each corner of the pattern was labelled as such. The angles between the facets were also defined as α, ψ and θ as shown.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/3dtwist.jpg" align="middle" width="500px" height="506px" />
+</p>
+
+<p>Using MATLAB, we calculated how the positions of the facets and the angles α and ψ would change as we increased θ from θ to π radians, representing the change from open to closed conformation. These angles were then used to compute the total elastic potential energy of the DNA square twist as it folded.</p>
+
+<p><strong>Results</strong></p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/modelgraph-01.png" align="middle" width="700px" height="541px" />
+</p>
+
+<p>We found that as θ increased from θ to about 2 rad, the elastic energy increased sharply, which was as expected given the increased creasing and bending. However, the model was unable to produce real values for the elastic energy for values of θ greater than 2 rad. Upon physical examination of a square twist closing, we observed that at values of θ greater than 2 rad; that is, when the square twist has nearly entered the closed conformation, some deformation is also observed in the peripheral square facets, instead of only on the rhombus facets as assumed. For this reason, the elastic energies of the square twist for θ between 2 and π rad cannot be calculated.</p>
+
+<p>However, a direct calculation showed that the elastic energy of the square twist when θ = π rad (in closed conformation) was θ, the same as when θ = θ rad (open conformation). This means that the elastic energy of the square twist increases as it folds, reaches a maximum, then returns to a minimum. The most stable configurations are the open and closed configurations, where elastic energy is at a minimum.</p>
+
+<p>We also used MATLAB code to produce a visualization of the square twist during the folding process.</p>
+
+<p style="text-align: center">
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/design/detection/ModelEnergies.mp4" type="video/mp4" />
+    </video>
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/design/detection/ModelAbove.mp4" type="video/mp4" />
+    </video>
+</p>
+
+<p><strong>Conclusions</strong></p>
+
+<p>In this experiment, we observed the changes in elastic energy of a square twist made of DNA as it folded from the open to the closed conformation, and concluded that a square twist made of DNA does indeed have the same properties as a square twist made of paper. In addition, as the initial assumption taken from Silverberg <em>et al.</em> (2015), that bending is constrained to rhombus facets, severely limited the abilities of the model, we have also demonstrated the need for a more sophisticated mathematical model taking into account the bending of the peripheral square facets.</p>
+
+<p>
+<a href="/usydufold/resources/stage1-matlab.zip" target="_blank">Click to view our MATLAB code.</a>
+</p>
+
+<h2 id="detection-stage2" class="anchor"> Stage 2: Designing a one-way hinge </h2>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td style="padding: 15px;"><p>
+            For the DNA square twist to fold successfully, it is important to restrict the angles between the facets. This can be achieved by extending the edge of one facet, forming a one-way hinge. DNA origami was used to design such a hinge. Designs were made in caDNAno and analysed using CanDo. </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<p><strong>Introduction</strong></p>
+
+<p>The success of the square twist folding from open to closed conformation is reliant on having creases that can only fold in one direction. Creases identified as mountain folds on the folding pattern must not be allowed to become valley folds, as this causes the sheet to buckle when attempting to fold.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/folds.jpg" align="middle" width="500px" height="226px" />
+</p>
+
+<p>In terms of the DNA square twist, where facets are joined by hinges (strands of ssDNA), this means the angle between 2 facets must be restricted to be less than π radians. This can be done by extending the edge of one facet over the hinge, effectively creating a one-way hinge. As the facets are joined by multiple hinges, for the purpose of this stage, we will only consider a section of the facets, joined by 2 hinges.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/hinges.jpg" align="middle" width="700px" height="517px" />
+</p>
+
+<p>To test whether such a one-way hinge can be effectively implemented using DNA, we designed the above structure using DNA origami.</p>
+
+<p><strong>Aim</strong></p>
+
+<p>The aim of this experiment is to design a one-way hinge where the angle between the arms joined by the hinge is restricted to less than π radians.</p>
+
+<p><strong>How DNA origami works</strong></p>
+
+<p>DNA origami is a technique that uses DNA as building blocks to form larger, 3D structures. Specifically, a single, long scaffold, in our case the plasmid M13mp18 (7249 bp), is held together by several shorter staples. As we know the sequence of bases in M13mp18, we must design the sequence of bases in the staples to achieve the intended structure. To understand how we obtain these sequences, some knowledge of the physical structure of DNA is needed. This section thus explains the basic principles behind the structure of DNA origami.</p>
+
+<p>A DNA helix has a helical twist of 10.5 base pairs per turn, which means that the helix turns 240° for every 7 base pairs. When 2 helices are placed side by side, the helices are in greatest proximity every 21 bases. At these points of proximity, the strands in the helices can crossover, thus linking the 2 helices together<sup>[2]</sup>.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/crossover.jpg" align="middle" width="500px" height="312px" />
+</p>
+
+<p>If we link one helix to not only 1, but 3 other helices, with crossovers occurring every 7 base pairs, we create the following structure.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/unit.jpg" align="middle" width="500px" height="328px" />
+</p>
+
+<p>We can then repeat this structure to form a honeycomb lattice.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/lattice.jpg" align="middle" width="500px" height="192px" />
+</p>
+
+<p>The lengths of the helices in the structure can be changed to obtain specific shapes.</p>
+
+<p><strong>Design</strong></p>
+
+<p>We considered a section of 2 facets, joined by 2 hinges to form a tweezer-like structure. One arm of the tweezer was extended past the hinge, making it a one-way hinge.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/onewayhinge.jpg" align="middle" width="500px" height="396px" />
+</p>
+
+<p>Using caDNAno<sup>[2]</sup>, we designed the routing of the scaffold through the structure above, and manually added staples and staple crossovers. Each staple was then inspected and edited to obey the following rules for optimisation of folding:</p>
+
+<ul>
+  <li>Staple length was between 15 and 48 bases</li>
+  <li>The ends of each staple must be at least 3 bases away from a staple crossover</li>
+</ul>
+
+<p>6 versions of the one-way hinge were eventually created! Versions 1 and 2 involved only 1 hinge, and was used to experiment with scaffold routing.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/v1.jpg" align="middle" width="700px" height="315px" />
+</p>
+
+<p>For versions 3 onwards, the arms of the tweezer were linked by 2 hinges. In versions 3, 4 and 5, the positions of the helices were the same, but the number and position of scaffold and staple crossovers between helices were varied. For each version, we also produced 3 sub-versions varying the length of the single-stranded hinge to be 5 base pairs, 10 base pairs, and 24 base pairs., thus yielding 15 sub-versions.</p>
+
+<p>For each sub-version, the design was analysed using CanDo<sup>[3,4]</sup> to predict its behaviour. Movies generated by CanDo of the thermal fluctuations of the designs suggested that the extension of one arm was indeed able to restrict the range of angles accessible by the other arm.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/v3.jpg" align="middle" width="500px" height="329px" />
+</p>
+
+<p style="text-align: center">
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/design/detection/cando-v3.mp4" type="video/mp4" />
+    </video>
+</p>
+
+<p>Using the M13mp18 plasmid (7249 bp) as the scaffold, we obtained the sequence of bases in the staples for each sub-version, and ordered the staples from the DNA. The staples were pooled with the plasmid and folded under different conditions. The folded origami were then purified through agarose gel electrophoresis to identify the optimal folding conditions and the best designs. For more information on the folding process and agarose gel electrophoresis, see <a href="/usydufold/analysis">Analysis</a>.</p>
+
+<p>Based on our results of the folded versions 3, 4 and 5, we found that the optimal design was to have 1-2 scaffold crossovers and 3-4 staple crossovers between each pair of adjacent helices, with each hinge being 10 bases in length. We incorporated these parameters, and came up with version 6, for which the scaffolds, staples, and CanDo-generated 3D structure are shown below.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/v6.jpg" align="middle" width="700px" height="648px" />
+</p>
+
+<p style="text-align: center">
+    <video width="500" controls="" loop="" autoplay="">
+        <source src="/usydufold/img/design/detection/cando-v6.mp4" type="video/mp4" />
+    </video>
+</p>
+
+<p>As these 6 versions are only 2 helices thick, they may be difficult to image using transmission electron microscopy. To aid imaging, we create a spare version of the one-way hinge, version 8, that with the same structure as version 8 but twice as thick. We folded versions 6 and 8, purified them and imaged the products. To see how the origami turned out, see our <a href="/usydufold/analysis">analysis</a>.</p>
+
+<p>
+<a href="/usydufold/resources/stage2.zip" target="_blank">To see all our versions of the one-way hinge in all their glory, click here.</a>
+</p>
+
+<h2 id="detection-stage3" class="anchor"> Stage 3: Designing a full square twist </h2>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td style="padding: 15px;"><p>
+            Having designed a one-way hinge, the next step is to build the entire square twist out of DNA. Designs were made in caDNAno and analysed using CanDo. </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<p><strong>Introduction</strong></p>
+
+<p>Being able to build a sheet of DNA origami, in the folding pattern of the square twist, is central to our project. To achieve this, we designed square-shaped and rhombus-shaped sheets of DNA origami, and joined these by hinges to create the creases of the folding pattern.</p>
+
+<p><strong>Aim</strong></p>
+
+<p>This experiment aimed to design a square twist made out of DNA.</p>
+
+<p><strong>Design</strong></p>
+
+<p>A single origami structure can only include one scaffold. Hence, the size of the structure is limited by the size of the scaffold, in this case the M13mp18 plasmid (7249 bp). Our first approach was to attempt to build the entire square twist as a single origami structure with a single plasmid routing through the structure. However, preliminary calculations showed that for the M13mp18 plasmid, each side of a square facet in the square twist would have a maximum length of 15.8 nm, or 48 base pairs. The severe restriction of the length would decrease the number of crossovers in the structure, making it extremely unstable and unlikely to fold. Hence, attempting to build the full square twist using a single M13mp18 plasmid unfeasible. However, we attempted a design of the scaffold routing in the full square twist, as this routing could potentially still be used once a larger scaffold is found.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/scaff1.jpg" align="middle" width="950px" height="1855px" />
+</p>
+
+<p>Our second approach was to make the square twist modular. The folding pattern of the square twist can be split into 4 peripheral components and 1 square component, each of which can be synthesized from DNA separately and then joined by adding hinges complementary to the edges of the components.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/origasplit.jpg" align="middle" width="500px" height="204px" />
+</p>
+
+<p>Each side of each component can then be longer, and the structure is likely to be more stable. caDNAno was used to design the peripheral module of the square twist. To reduce dimerisation between origami, a sequence of 5 thymine nucleotides (TTTTT) was added to the staples on the edges of the origami. CanDo analysis was performed on the design.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/3dsplit.jpg" align="middle" width="700px" height="341px" />
+</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/3dsplit-2.jpg" align="middle" width="950px" height="2050px" />
+</p>
+
+<p>This peripheral module was folded and analysed. To view the results, see <a href="/usydufold/analysis">Analysis</a>.</p>
+
+<p>
+<a href="/usydufold/resources/stage3.zip" target="_blank">To take a closer look at the files involved in this stage, click here.</a>
+</p>
+
+<h2 id="detection-stage4" class="anchor"> Stage 4: Demonstrating trigger-induced folding </h2>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td style="padding: 15px;"><p>
+            One of the working principles of the detection system is that a trigger DNA sequence causes the square twist to change conformation from open to closed form. This is achieved by adding a brace to the DNA structure, which is initially hybridised to a complement strand. The trigger sequence binds to the complement strand and displaces the brace, leaving the brace single-stranded. The brace then preferentially forms a hairpin. This hairpin formation provides the force needed to change conformations. As we have not yet constructed the full square twist, we instead demonstrate the ability of the trigger and brace to change the conformation of a one-way hinge from open to closed.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<p><strong>Introduction</strong></p>
+
+<p>In our system, the amplification system detects the presence of viral DNA and produces an amplified signal in the form of DNA strands. These strands act as a trigger for the detection system, and cause the square twist to change conformation from open to closed form. The trigger does so by interacting with a brace on the square twist. The brace is attached to the square twist and is initially hybridised to a brace complement with a slight overhang. In this hybridised state, the brace holds the square twist open. The trigger strand binds to the brace complement, displacing the brace and leaving the brace single stranded. The brace is designed such that when it is in single-stranded form, it preferentially forms a hairpin. The formation of this hairpin provides the driving force to close the square twist.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/brace.jpg" align="middle" width="750px" height="273px" />
+</p>
+
+<p>For the system to function, we must thus first demonstrate the ability of the trigger to displace the brace complement and cause the brace to form a hairpin, leading to a change in conformation of the DNA structure. As we have not folded the entire square twist yet, the DNA structure that changes conformation in this case is the one-way hinge, instead of the square twist. However, the working principles of the trigger-induced folding are the same, and can be applied to the square twist at a later stage.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/clopen.jpg" align="middle" width="750px" height="192px" />
+</p>
+
+<p><strong>Aim</strong></p>
+
+<p>This experiment aimed to design a brace to hold the one-way hinge open at an angle, as well as a brace complement with a slight overhang.</p>
+
+<p><strong>Design</strong></p>
+
+<p>As version 6 of the one-way hinge was designed to be most optimised for folding, it was used as the DNA structure that would change conformation in this experiment. A 60 base brace was designed and joined to 2 of the staples in the one-way hinge to obtain the following structure.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/hinge.jpg" align="middle" width="500px" height="241px" />
+</p>
+
+<p>To create a brace that would preferentially form a hairpin when single stranded, we randomly generated a 25 base sequence, named sequence A, and a 10 base sequence, named sequence B. The brace was formed by joining one end of sequence B to sequence A, and the other end of sequence B to the reverse complement of sequence A. The hairpin formation of this brace was checked using NUPACK. The brace was found to form a stable hairpin, and was thus suitable for use.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/detection/hairpin.jpg" align="middle" width="800px" height="401px" />
+</p>
+
+<p>A brace complement was designed by taking the complement of the brace, and adding a 10 base overhang, the sequence of which was generated randomly. The trigger strand was designed by taking the complement of the brace complement. The brace and brace complement were synthesised and added to the version 6 one-way hinge. To see the results of the brace and trigger, see our Analysis page. (link to analysis page)</p>
+
+<p>
+<a href="/usydufold/resources/stage4.zip" target="_blank">For more information on how we designed the brace, click here.</a>
+</p>
+
+<h1 id="references" class="anchor"> References </h1>
+
+<ol>
+  <li>Silverberg JL, Na JH, Evans AA, Liu B, Hull TC, Santangelo SD et al. (2015) Origami structures with a critical transition to bistability arising from hidden degrees of freedom. Nature Materials 14: 389-393.</li>
+  <li>Douglas, S.M., Marblestone, A.H., Teerapittayanon, S., Vazquez, A., Church, G.M., Shih, W.M. (2009). Rapid prototyping of 3D DNA-origami shapes with caDNAno. Nucleic Acids Research, 37: 5001-5006.</li>
+  <li>Kim, D.N., Kilchherr, F., Dietz, H., Bathe, M. (2012). Quantitative prediction of 3D solution shape and flexibility of nucleic acid nanostructures. Nucleic Acids Research, 40: 2862-2868.</li>
+  <li>Castro, C.E., Kilchherr, F., Kim, D.N., Shiao, E.L., Wauer, T., Wortmann, P. et al. (2011). A primer to scaffolded DNA origami. Nature Methods, 8: 221-229.</li>
+</ol>
+
+            </div>
+        </article>
+    </div>
+</div>
+
+        </section>
+
+            <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h2><a name="contact"></a>Social Media</h2>
+            <ul class="list-inline banner-social-buttons">
+                
+                <li>
+                    <a href="https://twitter.com/UsydBiomod" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">twitter</span></a>
+                </li>
+                
+                <li>
+                    <a href="https://www.facebook.com/UsydBiomod" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">facebook</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </footer>
+
+         <!-- jQuery Version 1.11.0 -->
+    <script src="/usydufold/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/usydufold/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/usydufold/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/usydufold/js/grayscale.js"></script>
+    </body>
+</html>
