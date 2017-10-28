@@ -6,7 +6,7 @@
     <title>Analysis | USydUFold</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="The BIOMOD 2017 team from the University of Sydney.">
-    <link rel="canonical" href="https://usydbiomod.github.io/usydufold/analysis/">
+    <link rel="canonical" href="https://usydbiomod.gitlab.io/usydufold/usydufold/analysis/">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link rel="stylesheet" href="/usydufold/style.css">
@@ -76,9 +76,8 @@
         <nav class="navsidebar navbar"> <!-- used to be class="floating-menu" -->
             <a href="#page-top"> <h3> Analysis </h3> </a>
             <a href="#amplification"> <span style="font-weight:bold"> Amplification</span></a>
-            <a href="#amp-sec1-2" style="text-align: center">Section 1 &amp; 2</a>
-            <a href="#amp-sec3" style="text-align: center">Section 3</a>
-            <a href="#amp-sec4" style="text-align: center">Section 4</a>
+            <a href="#goalgels" style="text-align: center">Goal achieving gels</a>
+            <a href="#othergels" style="text-align: center">Other gels</a>
             <a href="#detection"><span style="font-weight:bold"> Detection</span></a>
             <a href="#detection-stage2" style="text-align: center">Stage 2</a>
             <a href="#detection-stage3" style="text-align: center">Stage 3</a>
@@ -98,19 +97,93 @@
 <p>To test our design, we broke up our experiments into 4 sections:</p>
 
 <ol>
-  <li>Confirming that we could reproduce the results from the Hsing et al.(2014) paper on nonlinear HCR (described in the <a href="/usydufold/design">design</a> section).</li>
-  <li>Testing the design, by reproducing the results with different sequences.</li>
-  <li>Testing the adaptor system</li>
-  <li>Testing the triple dendrimer system</li>
+  <li>Confirming that we could reproduce the results from the Hsing et al.(2014) paper on nonlinear HCR (described in the <a href="/usydufold/design">design</a> section).
+    <ul>
+      <li>
+        <p><a href="/usydufold/web/viewer.html?file=gel1to9.pdf" target="_blank">Click here for the protocols for gels 1 to 9.</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>Testing the design, by reproducing the results with different sequences.
+    <ul>
+      <li>
+        <p><a href="/usydufold/web/viewer.html?file=gel1to9.pdf" target="_blank">Click here for the protocols for gels 1 to 9.</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>Testing the adaptor system
+    <ul>
+      <li>
+        <p><a href="/usydufold/web/viewer.html?file=gel10to12.pdf" target="_blank">Click here for the protocols for gels 10 to 12.</a><p>
+</p></p>
+      </li>
+    </ul>
+  </li>
+  <li>Testing the triple dendrimer system
+    <ul>
+      <li>
+        <p><a href="/usydufold/web/viewer.html?file=gel13to14.pdf" target="_blank">Click here for the protocols for gels 13 and 14.</a><p>
+
+</p></p>
+      </li>
+    </ul>
+  </li>
 </ol>
+<p>Sections 1 and 2 were tested in parallel. To ensure transparency all gels produced and their procedures are included, however, to keep this page interesting, the most successful gels are included before the others.</p>
 
-<p>Section 1 and 2 will be discussed together as they were tested in parallel. To ensure transparency all gels produced and their procedures are included. All systems were incubated for 30 minutes, before the gels were loaded and run.</p>
+<p>All systems were incubated for 30 minutes, before the gels were loaded and run.</p>
 
-<h2 id="amp-sec1-2" class="anchor"> Section 1 and 2: Reproducing the Hsing et al.(2014) results with the same and different sequences </h2>
+<h2 id="goalgels" class="anchor"> Goal achieving gels</h2>
 
-<p>
-<a href="/usydufold/web/viewer.html?file=gel1to9.pdf" target="_blank">Click here for the protocols for gels 1 to 9.</a>
+<p><strong>Gel 8</strong></p>
+
+<p>In this gel, we tried to make the dendrimer from the Hsing et al.(2014) paper.</p>
+
+<p>Despite a small mistake in accidentally putting BG in lane 2 and AF in lane 7, rather than the other way around, this gel confirmed that the system worked. We reproduced the Hsing et al.(2014) results. Lane 10 shows that without helper or trigger strands, no dendrimer band forms. Lane 11, similarly, demonstrates without helper no dendrimer band forms. A faint band of a similar size to the dendrimer appears in lane 12, which lacked trigger. However, when compared to lane 13, it’s very clear that the reaction is much more successful with trigger as the very bright band at the top indicates dendrimer formation. It also shows that in absence of trigger, the system has very limited false positives.</p>
+
+<p>There are still some ‘mystery bands’ in this gel. These could be intermediate stages or some unexpected bonding between two strands or complexes. Some computer simulations could be run, to clarify what these bands might be.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/analysis/gel8.png" align="middle" width="600px" height="701px" />
 </p>
+
+<p><strong>Gel 9</strong></p>
+
+<p>In this gel, we tried to make a dendrimer using our sequences. This gel was run in parallel with gel 8.</p>
+
+<p>Most of the complexes still formed as expected. There is still sign of some dendrimer formation at the top of lane 13, with slightly brighter bands than lane 12. But nothing very definitive. For future design, we’ll do more modelling to see how the strands are predicted to interact. The ladder and byproduct A bands are still quite saturated and should be reduced in concentration.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/analysis/gel9.png" align="middle" width="600px" height="729px" />
+</p>
+
+<p><strong>Gel 12</strong></p>
+
+<p>Gel 12 was produced to confirm the results from gel 10 and 11, and to test whether the adaptor would remain stable in the presence of fuel.</p>
+
+<p>The gel is quite saturated and the concentrations of every sample should be lowered. Aside from saturation, the gel does again demonstrate the specificity of the adaptor. Adaptor A and C were tested against each other, which are the same design but with a different sequence. Adaptor B and D were a modification of the design used for A and C, but accounted for prevention of off-target complexes. B and D also had different sequences to one another. None of the adaptors formed Input-Adaptor complexes with the wrong input.</p>
+
+<p>Additionally, lane 13 included fuel but a mismatched input, but still no adaptor-input or adaptor-fuel complex was formed, showing that the adaptor remained stable, despite the presence of fuel strands.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/analysis/gel12.png" align="middle" width="600px" height="771px" />
+</p>
+
+<p><strong>Gel 14</strong></p>
+
+<p>In this gel, we tried to make the third order amplification system.</p>
+
+<p>The gel does contain some error; BF and BG did not show in lane 6 and 7, there was a mystery strand in lane 8, 10, and 11, and lane 12 and 13 have some saturated strands.</p>
+
+<p>On the other hand, the band at the top of lane 13, appears only in lane 13 and shows that the triple dendrimer system we designed worked successfully.</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/analysis/gel14.png" align="middle" width="600px" height="667px" />
+</p>
+
+<p><strong><a href="/usydufold/analysis#detection">Jump to Detection Results</a></strong></p>
+
+<h2 id="othergels" class="anchor"> Other gels</h2>
 
 <p><strong>Gel 1</strong></p>
 
@@ -121,7 +194,7 @@
 <p>The assembly of substrate B was a little more problematic as the lanes look identical to those for substrate A. So much so, that we may very well have added the components for substrate A instead of B in lane 7-10.  Additionally a band shows up at the bottom of lane 10-13, this is probably Helper B, as lane 11 contains only Helper B and only 1 band showed up in that lane. Due to lack of experience with IPAGE, some Helper B probably spilled into neighbouring lanes, alternatively, we may have added it to the lane thinking we were using it to make substrate B and byproduct B. Finally, lane 13 had the trigger strand in it, which could have run off the gel as it was left possibly for longer than it should have been.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel1.png" align="middle" width="600px" height="698px" />
+<img src="/usydufold/img/analysis/gel1.png" align="middle" width="600px" height="698px" />
 </p>
 
 <p><strong>Gel 2</strong></p>
@@ -133,7 +206,7 @@
 <p>Some mistakes were made in this gel, such as accidentally omitting Helper strands, having the trigger strand run off the gel in lane 7 and having an empty lane 9, which should have looked like lane 8. This was only our second gel, so they will hopefully get better as we progress.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel2.png" align="middle" width="600px" height="755px" />
+<img src="/usydufold/img/analysis/gel2.png" align="middle" width="600px" height="755px" />
 </p>
 
 <p><strong>Gel 3</strong></p>
@@ -141,7 +214,7 @@
 <p>This gel was meant to act as a control for making substrate A and B. But we very clearly had a bad lab day, as none of the results make any sense. In the future, we’ll reduce concentrations and write out clearer, stepwise protocols to avoid errors.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel3.png" align="middle" width="600px" height="674px" />
+<img src="/usydufold/img/analysis/gel3.png" align="middle" width="600px" height="674px" />
 </p>
 
 <p><strong>Gel 4</strong></p>
@@ -149,7 +222,7 @@
 <p>This gel was meant to act as a control for making substrate A and B. It was produced on the same ‘bad lab day’ as gel 3 and similar modifications will be made in future experiments.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel4.png" align="middle" width="600px" height="676px" />
+<img src="/usydufold/img/analysis/gel4.png" align="middle" width="600px" height="676px" />
 </p>
 
 <p><strong>Gel 5</strong></p>
@@ -161,7 +234,7 @@
 <p>The lanes that showed up show exactly what we’d expect and confirm the system works.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel5.png" align="middle" width="600px" height="675px" />
+<img src="/usydufold/img/analysis/gel5.png" align="middle" width="600px" height="675px" />
 </p>
 
 <p><strong>Gel 6</strong></p>
@@ -174,7 +247,7 @@
 Additionally the ladder was quite saturated, the concentration should be reduced in future experiments.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel6.png" align="middle" width="600px" height="667px" />
+<img src="/usydufold/img/analysis/gel6.png" align="middle" width="600px" height="667px" />
 </p>
 
 <p><strong>Gel 7</strong></p>
@@ -186,35 +259,7 @@ Additionally the ladder was quite saturated, the concentration should be reduced
 <p>Some bands, like byproduct in lane 6 and 7 were quite saturated. Some concentration adjustment will have to be taken into account for the next gel. The ladder concentration should also be reduced. Finally, lane 14 shows a skew in the bands on the right hand side. As the samples contained Mg2+ the PAGE process caused the sample on the right hand side of the lane to travel faster. In future gels, this will be accounted for by adding Mg2+ buffer in any unused lanes before running gels.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel7.png" align="middle" width="600px" height="676px" />
-</p>
-
-<p><strong>Gel 8</strong></p>
-
-<p>In this gel, we tried to make the dendrimer from the Hsing et al.(2014) paper.</p>
-
-<p>Despite a small mistake in accidentally putting BG in lane 2 and AF in lane 7, rather than the other way around, this gel confirmed that the system worked. We reproduced the Hsing et al.(2014) results. Lane 10 shows that without helper or trigger strands, no dendrimer band forms. Lane 11, similarly, demonstrates without helper no dendrimer band forms. A faint band of a similar size to the dendrimer appears in lane 12, which lacked trigger. However, when compared to lane 13, it’s very clear that the reaction is much more successful with trigger as the very bright band at the top indicates dendrimer formation. It also shows that in absence of trigger, the system has very limited false positives.</p>
-
-<p>There are still some ‘mystery bands’ in this gel. These could be intermediate stages or some unexpected bonding between two strands or complexes. Some computer simulations could be run, to clarify what these bands might be.</p>
-
-<p style="text-align: center">
-<img src="/usydufold/img/gel8.png" align="middle" width="600px" height="701px" />
-</p>
-
-<p><strong>Gel 9</strong></p>
-
-<p>In this gel, we tried to make a dendrimer using our sequences. This gel was run in parallel with gel 8.</p>
-
-<p>Most of the complexes still formed as expected. There is still sign of some dendrimer formation at the top of lane 13, with slightly brighter bands than lane 12. But nothing very definitive. For future design, we’ll do more modelling to see how the strands are predicted to interact. The ladder and byproduct A bands are still quite saturated and should be reduced in concentration.</p>
-
-<p style="text-align: center">
-<img src="/usydufold/img/gel9.png" align="middle" width="600px" height="729px" />
-</p>
-
-<h2 id="amp-sec3" class="anchor"> Section 3: Testing Adaptor complexes </h2>
-
-<p>
-<a href="/usydufold/web/viewer.html?file=gel10to12.pdf" target="_blank">Click here for the protocols for gels 10 to 12.</a>
+<img src="/usydufold/img/analysis/gel7.png" align="middle" width="600px" height="676px" />
 </p>
 
 <p><strong>Gel 10</strong></p>
@@ -226,7 +271,7 @@ Additionally the ladder was quite saturated, the concentration should be reduced
 <p>The adaptor strands are quite saturated and a reduction in concentration could help in showing some of the fainter bands.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel10.png" align="middle" width="600px" height="751px" />
+<img src="/usydufold/img/analysis/gel10.png" align="middle" width="600px" height="751px" />
 </p>
 
 <p><strong>Gel 11</strong></p>
@@ -236,25 +281,7 @@ Additionally the ladder was quite saturated, the concentration should be reduced
 <p>The results of this gel are quite similar to gel 10, again showing specificity, but also very saturated bands.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel11.png" align="middle" width="600px" height="750px" />
-</p>
-
-<p><strong>Gel 12</strong></p>
-
-<p>Gel 12 was produced to confirm the results from gel 10 and 11, and to test whether the adaptor would remain stable in the presence of fuel.</p>
-
-<p>The gel is quite saturated and the concentrations of every sample should be lowered. Aside from saturation, the gel does again demonstrate the specificity of the adaptor. Adaptor A and C were tested against each other, which are the same design but with a different sequence. Adaptor B and D were a modification of the design used for A and C, but accounted for prevention of off-target complexes. B and D also had different sequences to one another. None of the adaptors formed Input-Adaptor complexes with the wrong input.</p>
-
-<p>Additionally, lane 13 included fuel but a mismatched input, but still no adaptor-input or adaptor-fuel complex was formed, showing that the adaptor remained stable, despite the presence of fuel strands.</p>
-
-<p style="text-align: center">
-<img src="/usydufold/img/gel12.png" align="middle" width="600px" height="771px" />
-</p>
-
-<h2 id="amp-sec4" class="anchor"> Section 4: Testing the triple amplification system </h2>
-
-<p>
-<a href="/usydufold/web/viewer.html?file=gel13to14.pdf" target="_blank">Click here for the protocols for gels 13 and 14.</a>
+<img src="/usydufold/img/analysis/gel11.png" align="middle" width="600px" height="750px" />
 </p>
 
 <p><strong>Gel 13</strong></p>
@@ -264,19 +291,7 @@ Additionally the ladder was quite saturated, the concentration should be reduced
 <p>From the image, it’s quite clear that this gel was made during another ‘bad lab day’. Ladder concentration is still too high and some ladder was spilled into lane 2 and 3. Most bands didn’t show up and this gel can’t really be used to analyse the system. As we are low on time, this gel won’t be re-done and instead we’ll try to make the whole third order system next gel.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/gel13.png" align="middle" width="600px" height="664px" />
-</p>
-
-<p><strong>Gel 14</strong></p>
-
-<p>In this gel, we tried to make the third order amplification system.</p>
-
-<p>The gel does contain some error; BF and BG did not show in lane 6 and 7, there was a mystery strand in lane 8, 10, and 11, and lane 12 and 13 have some saturated strands.</p>
-
-<p>On the other hand, the band at the top of lane 13, appears only in lane 13 and shows that the triple dendrimer system we designed worked successfully.</p>
-
-<p style="text-align: center">
-<img src="/usydufold/img/gel14.png" align="middle" width="600px" height="667px" />
+<img src="/usydufold/img/analysis/gel13.png" align="middle" width="600px" height="664px" />
 </p>
 
 <h1 id="detection" class="anchor"> Detection </h1>
