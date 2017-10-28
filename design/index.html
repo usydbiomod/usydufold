@@ -101,7 +101,7 @@
 
 <p>As the project is targeted at point of care applications, Polymerase Chain Reaction (PCR), one of the more common amplification methods, cannot be used. PCR machines require an active power supply and the equipment. As we had always taken PCR for granted, we had to do some research before we knew how we wanted to tackle our amplification system. And even when we did start finding alternatives, for a while we called them ‘PCR without PCR’.</p>
 
-<p>We did find a solution, in the form of the Hybridisation Chain Reaction (HCR). We read about linear HCR, which we described in the <a href="/usydufold/project">project</a> section. And then we found out about non-linear HCR. In a paper published in the Journal of the American Chemical Society (JACS), they had successfully created a second order HCR system<sup>[5]</sup>.</p>
+<p>We did find a solution, in the form of the Hybridisation Chain Reaction (HCR). We read about linear HCR, which we described in the <a href="/usydufold/project">project</a> section. And then we found out about non-linear HCR. Hsing et al. (2014) successfully created a second order HCR system<sup>[5]</sup>, which was published in the Journal of the American Chemical Society (JACS).</p>
 
 <p>In their system, an input binds to a double stranded sequence called substrate-A. This causes the smaller strand of substrate-A to be displaced and with the help of another single stranded sequence, assistant-A, is displaced altogether. This leave the input-substrate-A complex with a long single stranded toehold. Two double stranded complexes, called substrate-B, bind to the two identical sections on the toehold. This causes the smaller strand to displace and detach completely with the help of assistant-B. This forms a dendrimer monomer, with two single stranded toehold complementary to the toehold of substrate A. And hence the process repeats.</p>
 
@@ -111,9 +111,9 @@
 
 <p>This method suited almost all of our needs. The only modifications we would need to make were a system that could easily be adapted for different viruses and a system that amplified more.</p>
 
-<h2 id="amp-stage2" class="anchor"> Stage 2: Reproducing the JACS results </h2>
+<h2 id="amp-stage2" class="anchor"> Stage 2: Reproducing the Hsing et al. (2014) results </h2>
 
-<p>To ensure that this system works with different sequences, it is necessary to model the structures using online nucleic acid design software. NUPACK offers both design and analysis software and hence is ideal for reproducing the JACS  complexes and design our own.</p>
+<p>To ensure that this system works with different sequences, it is necessary to model the structures using online nucleic acid design software. NUPACK offers both design and analysis software and hence is ideal for reproducing the Hsing et al. (2014) complexes and design our own.</p>
 
 <p style="text-align: center">
 <img src="/usydufold/img/design/amplification/subA.png" align="middle" width="500px" height="500px" />
@@ -132,13 +132,17 @@
 
 <h2 id="amp-stage3" class="anchor"> Stage 3: Adaptor system </h2>
 
-<p>In order for the amplifications system to be easily adaptable to any virus, an adaptor system is introduced. The adaptor consists of the trigger strand, which would be used in the dendrimer, and a partially complementary strand which we termed “the lock” which forms a loop, as per the diagram below. It involves an input, which will be the viral dna in the final system. The input binds to a toehold of the adaptor. This should induce toehold mediated displacement, meaning that once the input binds onto the lock, the trigger starts to be displaced. This will then release the trigger and the amplification reaction can begin.</p>
+<p>In order for the amplifications system to be easily adaptable to any virus, an adaptor system is introduced. The adaptor consists of the trigger strand, which would be used in the dendrimer, and a partially complementary strand which we termed “the lock” which forms a loop, as per the diagram below. It involves an input, which will be the viral DNA in the final system. The input binds to a toehold of the adaptor. This should induce toehold mediated displacement, meaning that once the input binds onto the lock, the trigger starts to be displaced. This will then release the trigger and the amplification reaction can begin.</p>
 
-<p>If fuel is added, the input dna is released again and can bind to another adaptor.
-Two of the designs had NUPACK code to prevent formation of off-target complexes, and two didn’t</p>
+<p>If fuel is added, the input DNA is released again and can bind to another adaptor.
+Two of the designs had NUPACK code to prevent formation of off-target complexes, and two didn’t.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/design/amplification/adaptor.png" align="middle" width="500px" height="500px" />
+<img src="/usydufold/img/design/amplification/adaptor.png" align="middle" width="700px" height="552px" />
+</p>
+
+<p style="text-align: center">
+<img src="/usydufold/img/design/amplification/adaptor-nupack.png" align="middle" width="500px" height="500px" />
 </p>
 
 <p>
@@ -150,7 +154,7 @@ Two of the designs had NUPACK code to prevent formation of off-target complexes,
 
 <h2 id="amp-stage4" class="anchor"> Stage 4: Third order amplification </h2>
 
-<p>In the interest of making our system fast, the faster the amplification system works, the better. So we decided to increase the degree of amplification. Rather than having two single stranded toeholds after a cycle, we’ll have three.</p>
+<p>The faster the amplification system works, the better. So we decided to increase the degree of amplification. Rather than having two single stranded toeholds after a cycle, we’ll have three.</p>
 
 <p style="text-align: center">
 <img src="/usydufold/img/design/amplification/reaction.png" align="middle" width="700px" height="997px" />
@@ -230,9 +234,9 @@ Two of the designs had NUPACK code to prevent formation of off-target complexes,
 <img src="/usydufold/img/design/detection/modelgraph-01.png" align="middle" width="700px" height="541px" />
 </p>
 
-<p>We found that as θ increased from θ to about 2 rad, the elastic energy increased sharply, which was as expected given the increased creasing and bending. However, the model was unable to produce real values for the elastic energy for values of θ greater than 2 rad. Upon physical examination of a square twist closing, we observed that at values of θ greater than 2 rad; that is, when the square twist has nearly entered the closed conformation, some deformation is also observed in the peripheral square facets, instead of only on the rhombus facets as assumed. For this reason, the elastic energies of the square twist for θ between 2 and π rad cannot be calculated.</p>
+<p>We found that as θ increased to 2 radians, elastic energy increased sharply, which was expected given the increasing creasing and bending. Upon passing this critical value, elastic energy decreases sharply. This means that the elastic energy of the square twist increases as it folds, reaches a maximum, then returns to a minimum. The most stable configurations are the open and closed configurations where energy reaches a minimum.</p>
 
-<p>However, a direct calculation showed that the elastic energy of the square twist when θ = π rad (in closed conformation) was θ, the same as when θ = θ rad (open conformation). This means that the elastic energy of the square twist increases as it folds, reaches a maximum, then returns to a minimum. The most stable configurations are the open and closed configurations, where elastic energy is at a minimum.</p>
+<p>We used MATLAB code to produce a visualization of the square twist folding process and it’s corresponding energy variations. However, upon physical examination of the square twist folding, some deformation is observed in the peripheral square facets instead of the initial rhombus facets. For this reason, there is no visualization of the square twist folding for theta between 2 and π radians (approximately the last third of folding).</p>
 
 <p>We also used MATLAB code to produce a visualization of the square twist during the folding process.</p>
 
@@ -305,7 +309,7 @@ Two of the designs had NUPACK code to prevent formation of off-target complexes,
 <p>We can then repeat this structure to form a honeycomb lattice.</p>
 
 <p style="text-align: center">
-<img src="/usydufold/img/design/detection/lattice.jpg" align="middle" width="500px" height="192px" />
+<img src="/usydufold/img/design/detection/lattice.jpg" align="middle" width="600px" height="231px" />
 </p>
 
 <p>The lengths of the helices in the structure can be changed to obtain specific shapes.</p>
